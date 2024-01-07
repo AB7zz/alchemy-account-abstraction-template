@@ -8,8 +8,7 @@ import * as dotenv from "dotenv";
 import { defineChain } from "viem";
 dotenv.config();
 
-const PRIV_KEY = process.env.PRIV_KEY!;
-const ALCHEMY_API_URL = process.env.ALCHEMY_API_URL!
+const PRIV_KEY = process.env.PRIV_KEY!
 const ALCHEMY_API_KEY = process.env.ALCHEMY_API_KEY!
 const ENTRY_POINT_ADDRESS = "0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789"
 

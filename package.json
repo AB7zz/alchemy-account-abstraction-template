@@ -1,38 +1,47 @@
 {
-  "name": "creating-light-smart-account-and-sending-user-ops",
+  "name": "",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
+  "license": "AGPL-version-3.0",
+  "private": false,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": "",
+  "keywords": [],
+  "author": {
+    "name": "",
+    "email": "",
+    "url": ""
+  },
+  "contributors": [],
   "scripts": {
     "execute:ts-core": "tsx -r dotenv/config src/ts/core/index.ts",
     "execute:js-core": "tsx -r dotenv/config src/js/core/index.js",
     "getCFaddress": "tsx -r dotenv/config scripts/getCounterfactual.ts",
     "sendETH": "tsx -r dotenv/config scripts/sendEthToSCA.ts"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alchemyplatform/creating-light-smart-account-and-sending-user-ops.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/alchemyplatform/creating-light-smart-account-and-sending-user-ops/issues"
-  },
-  "homepage": "https://github.com/alchemyplatform/creating-light-smart-account-and-sending-user-ops#readme",
-  "dependencies": {
-    "@alchemy/aa-accounts": "^1.2.0",
-    "@alchemy/aa-alchemy": "^1.2.0",
-    "@alchemy/aa-core": "^1.2.0",
-    "@alchemy/aa-ethers": "^1.2.0",
-    "alchemy-sdk": "^3.1.0",
-    "dotenv": "^16.3.1",
-    "tsx": "^4.7.0",
-    "viem": "^2.0.2"
-  },
   "devDependencies": {
     "@types/node": "^20.10.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@alchemy/aa-accounts": "^1.2.3",
+    "@alchemy/aa-alchemy": "^1.2.3",
+    "@alchemy/aa-core": "^1.2.3",
+    "@alchemy/aa-ethers": "^1.2.3",
+    "alchemy-sdk": "^3.1.0",
+    "dotenv": "^16.3.1",
+    "tsx": "^4.7.0",
+    "viem": "^2.0.3"
   }
 }
