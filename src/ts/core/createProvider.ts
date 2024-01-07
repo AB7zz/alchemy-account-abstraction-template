@@ -1,12 +1,12 @@
 import {
   LightSmartContractAccount,
-  getDefaultLightAccountFactory,
+  getDefaultLightAccountFactoryAddress,
 } from "@alchemy/aa-accounts";
 import { AlchemyProvider } from "@alchemy/aa-alchemy";
 import { LocalAccountSigner, SmartAccountSigner } from "@alchemy/aa-core";
 import * as dotenv from "dotenv";
 import { privateKeyToAccount } from "viem/accounts";
-import { sepolia } from "viem/chains";
+import { polygonMumbai } from "viem/chains";
 dotenv.config();
 
 const PRIV_KEY = process.env.PRIV_KEY!;
@@ -15,7 +15,7 @@ const ALCHEMY_API_URL = process.env.ALCHEMY_API_URL!;
 const ENTRYPOINT_ADDRESS = "0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789";
 
 export default async function createProvider() {
-  const chain = sepolia;
+  const chain: any = polygonMumbai;
   const PRIVATE_KEY = PRIV_KEY; // Replace with the private key of your EOA that will be the owner of Light Account
 
   const eoaSigner: SmartAccountSigner =
@@ -33,9 +33,9 @@ export default async function createProvider() {
     (rpcClient) =>
       new LightSmartContractAccount({
         entryPointAddress: ENTRYPOINT_ADDRESS,
-        chain: rpcClient.chain,
+        chain,
         owner: eoaSigner,
-        factoryAddress: getDefaultLightAccountFactory(rpcClient.chain), // Default address for Light Account on Sepolia, you can replace it with your own.
+        factoryAddress: getDefaultLightAccountFactoryAddress(chain), // Default address for Light Account on polygonMumbai, you can replace it with your own.
         rpcClient,
       })
   );

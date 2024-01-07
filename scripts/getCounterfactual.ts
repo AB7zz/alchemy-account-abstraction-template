@@ -9,7 +9,7 @@ const __dirname = import.meta.url.split("/scripts")[0].split("file://")[1];
 
 async function main() {
   const provider = await createProvider();
-
+  console.log(provider)
   const counterfactualAddress = await provider.getAddress();
 
   console.log(counterfactualAddress);
