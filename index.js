@@ -5,6 +5,12 @@ import {
   import { AlchemyProvider } from "@alchemy/aa-alchemy";
   import { LocalAccountSigner } from "@alchemy/aa-core";
   import { defineChain } from 'viem'
+  import dotenv from 'dotenv'
+  dotenv.config();
+
+  const PRIV_KEY = process.env.PRIV_KEY
+  const ALCHEMY_API_KEY = process.env.ALCHEMY_API_KEY
+  const ENTRY_POINT_ADDRESS = "0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789"
   
   const polygonMumbai = /*#__PURE__*/ defineChain({
     id: 80_001,
@@ -39,20 +45,22 @@ import {
   
   // The private key of your EOA that will be the owner of Light Account
   // Our recommendation is to store the private key in an environment variable
-  const PRIVATE_KEY = "0xb22b52cadf5b8a828472b2b3356ce4b7c3ec5092b5ed2a868ed51db3ac620c1c";
+  const PRIVATE_KEY = `0x${PRIV_KEY}`;
   const owner = LocalAccountSigner.privateKeyToAccountSigner(PRIVATE_KEY);
   
   // Create a provider to send user operations from your smart account
   const provider = new AlchemyProvider({
     // get your Alchemy API key at https://dashboard.alchemy.com
-    apiKey: "kIbxGNByWiwuTZykryjsDc1HU7PpYhfV",
+    apiKey: ALCHEMY_API_KEY,
     chain,
+    entryPointAddress: ENTRY_POINT_ADDRESS,
   }).connect(
     (rpcClient) =>
       new LightSmartContractAccount({
         rpcClient,
         owner,
         chain,
+        entryPointAddress: ENTRY_POINT_ADDRESS,
         factoryAddress: getDefaultLightAccountFactoryAddress(chain),
       })
   );
