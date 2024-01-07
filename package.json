@@ -24,24 +24,16 @@
   },
   "contributors": [],
   "scripts": {
-    "execute:ts-core": "tsx -r dotenv/config src/ts/core/index.ts",
-    "execute:js-core": "tsx -r dotenv/config src/js/core/index.js",
-    "getCFaddress": "tsx -r dotenv/config scripts/getCounterfactual.ts",
-    "sendETH": "tsx -r dotenv/config scripts/sendEthToSCA.ts"
+    "dev": "",
+    "test": ""
   },
   "devDependencies": {
-    "@types/node": "^20.10.6",
-    "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
   "dependencies": {
     "@alchemy/aa-accounts": "^1.2.3",
     "@alchemy/aa-alchemy": "^1.2.3",
     "@alchemy/aa-core": "^1.2.3",
-    "@alchemy/aa-ethers": "^1.2.3",
-    "alchemy-sdk": "^3.1.0",
-    "dotenv": "^16.3.1",
-    "tsx": "^4.7.0",
     "viem": "^2.0.3"
   }
 }
