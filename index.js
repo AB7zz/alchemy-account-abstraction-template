@@ -4,7 +4,7 @@ import {
   } from "@alchemy/aa-accounts";
   import { AlchemyProvider } from "@alchemy/aa-alchemy";
   import { LocalAccountSigner } from "@alchemy/aa-core";
-  import defineChain from 'viem'
+  import { defineChain } from 'viem'
   
   const polygonMumbai = /*#__PURE__*/ defineChain({
     id: 80_001,
